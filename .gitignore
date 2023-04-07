@@ -42,4 +42,4 @@ git commit -m ".DS_Store banished!"
 **/.DS_Store
 .DS_Store.DS_Store
 
-data/input files_nc/*.*
+#data/input files_nc/*.*

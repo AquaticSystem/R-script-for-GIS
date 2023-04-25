@@ -22,3 +22,6 @@ The original goal was to be able to take raw images from MODIS AQUA satellite in
 
     -   dplyr
 
+##### Note
+
+as GitHub doesn't allow to upload empty folders, there are already transformed files in 'data/output files_geotiff' directory. These files will be overwritten when the script is run.

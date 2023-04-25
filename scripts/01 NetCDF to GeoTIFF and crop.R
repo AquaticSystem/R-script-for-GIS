@@ -2,6 +2,7 @@
 #### based on xuanlongma script ('https://gist.github.com/xuanlongma/5874674')
 #### with some modifications by Galia Shinkareva
 
+
 # Packages required -----
 if (!require(dplyr)) install.packages('dplyr')
 if (!require(raster)) install.packages('raster')
@@ -18,6 +19,7 @@ dir.nc <- 'data/input files_nc/' #provide directory with NetCDF files
 ## Get input filenames -----
 files.nc <- list.files(dir.nc, full.names = TRUE, recursive = TRUE)
 
+
 # Output directory -----
 dir.output <- 'data/output files_geotiff/' #provide directory for GeoTIFF files
 
@@ -26,11 +28,13 @@ files.gtif <- gsub(".nc", "", basename(files.nc))
 
 
 # Get a desired extent -----
-crop_poly <- sf::st_read("data/shapefiles/Tanganyika.shp") #provide a shapefile to get an extent from
-raster_crop_poly <- raster(crop_poly) #'GTiff', , sep = ''
-crop_extent <- as(extent(bbox(raster_crop_poly)), 'SpatialPolygons')
+## provide the extent manually -----
+crop_extent <- as(extent(28, 35, -15, 3), 'SpatialPolygons') #here the extent is: 28°E, 15°S, 35°E, 3°N
 
-# crop_extent <- as(extent(28, 35, -15, 3), 'SpatialPolygons') #or provide the extent manually, here it is: 28°E, 15°S, 35°E, 3°N 
+## provide a shapefile to get an extent from -----
+# crop_poly <- sf::st_read("data/yourshapefile.shp") #or provide a shapefile
+# raster_crop_poly <- raster(crop_poly) #'GTiff', , sep = ''
+# crop_extent <- as(extent(bbox(raster_crop_poly)), 'SpatialPolygons')
 
 
 # Batch converting and cropping -----

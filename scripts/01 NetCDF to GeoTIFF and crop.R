@@ -29,7 +29,7 @@ files.gtif <- gsub(".nc", "", basename(files.nc))
 
 # Get a desired extent -----
 ## provide the extent manually -----
-crop_extent <- as(extent(28, 35, -15, 3), 'SpatialPolygons') #here the extent is: 28°E, 15°S, 35°E, 3°N
+crop_extent <- as(extent(28, 36, -15, 3), 'SpatialPolygons') #here the extent is: 28°E, 15°S, 35°E, 3°N
 
 ## provide a shapefile to get an extent from -----
 # crop_poly <- sf::st_read("data/yourshapefile.shp") #or provide a shapefile
